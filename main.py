@@ -36,3 +36,4 @@ dict_to_csv(weekly,f'results/{group}_weekly.csv')
 monthly = users.get_total_monthly()
 dict_to_csv(monthly,f'results{group}_monthly.csv')
 
+  
