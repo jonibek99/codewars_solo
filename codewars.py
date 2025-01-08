@@ -68,6 +68,24 @@ class Users:
             result.append(user_data)
         result = sorted(result,key=lambda x:x['total_completed'],reverse=True)
         return result
+    def get_total_all(self):
+        user_data = {
+            'username':'',
+            'name':'',
+            'total_completed':0,
+        }
+        result = []
+        for user in self.users:
+            # print(user)
+            user_data={
+                'name':user.fullname,
+                'username':user.username,
+                'total_completed':user.get_total()
+            }
+            result.append(user_data)
+        result = sorted(result,key=lambda x:x['total_completed'],reverse=True)
+        return result
+
     
     def get_total_weekly(self):
         """
@@ -287,7 +305,7 @@ class User:
         data = self.completed['data']
         total = 0 # Total number of completed kata in current week
         for item in data:        
-            completed_at = datetime.fromisoformat(item['completedAt'])
+            completed_at = datetime.strptime(item['completedAt'], "%Y-%m-%dT%H:%M:%S.%fZ")
             # Check if completed date is in current week
             if week_date <= completed_at.date() <= week_date + timedelta(days=7):
                 total+=1
@@ -304,7 +322,7 @@ class User:
         data = self.completed['data']
         total = 0 # Total number of completed kata in current month
         for item in data:        
-            completed_at = datetime.fromisoformat(item['completedAt'])
+            completed_at = datetime.strptime(item['completedAt'], "%Y-%m-%dT%H:%M:%S.%fZ")
             # Check if completed date is in current month
             if monthly_date - timedelta(days=30) <= completed_at.date() <= monthly_date :
                 total+=1
