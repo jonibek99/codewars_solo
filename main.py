@@ -12,6 +12,7 @@ def dict_to_csv(data, path):
 # users = []
 # Read data from csv file
 group ='python_0'
+
 users = []
 
 with open(f'group/{group}.csv', 'r') as file:
