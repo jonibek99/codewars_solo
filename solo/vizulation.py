@@ -10,7 +10,7 @@ weekly=f"python_{python_group}_weekly"
 monthly=f"python_{python_group}_monthly"
 total_ll=f'python_{python_group}_total_all'
 
-df=pd.read_csv(f'data/results/{daily}.csv')
+df=pd.read_csv(f'data/results/{total_ll}.csv')
 
 fig, ax = plt.subplots(2,2,figsize=(20, 8))
 fig.suptitle('Python_Codewars_results')
