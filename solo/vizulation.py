@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-python_group='8'
-number='8'
+python_group='0'
+number='0'
 when='daily'
 daily=f"python_{python_group}_daily"
 weekly=f"python_{python_group}_weekly"
