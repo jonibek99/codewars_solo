@@ -2,23 +2,37 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-python_group='7'
-
+python_group='8'
+number='8'
+when='daily'
 daily=f"python_{python_group}_daily"
 weekly=f"python_{python_group}_weekly"
 monthly=f"python_{python_group}_monthly"
 total_ll=f'python_{python_group}_total_all'
 
-df=pd.read_csv(f'data/results/{monthly}.csv')
+df=pd.read_csv(f'data/results/{daily}.csv')
 
-fig, ax = plt.subplots(2,2,figsize=(16, 8))
+fig, ax = plt.subplots(2,2,figsize=(20, 8))
 fig.suptitle('Python_Codewars_results')
+plt.xticks(rotation=90)
+sns.lineplot(data=df,ax=ax[0,0],x=df.username,y=df.total_completed,color='red').grid(which='both')
 
-sns.lineplot(data=df,ax=ax[0,0],color='red').grid(which='both')
-sns.barplot(data=df,ax=ax[0,1],color='black').grid(which='both')
-sns.histplot(data=df,ax=ax[1,0],color='blue').grid(which='both')
-sns.boxplot(data=df,ax=ax[1,1],color='yellow').grid(which='both')
-plt.savefig('pictures/codewars_results/codewars.svg')
+plt.ylabel('katalar_soni')
+plt.xlabel('foydananuvchilar')
+sns.barplot(data=df,ax=ax[0,1],x=df.username,y=df.total_completed,color='black').grid(which='both')
+sns.histplot(data=df,ax=ax[1,0],x=df.username,y=df.total_completed,color='green').grid(which='both')
+sns.boxplot(data=df,ax=ax[1,1],x=df.username,y=df.total_completed,color='blue').grid(which='both')
+plt.ylabel('katalar_soni')
+plt.xlabel('foydananuvchilar')
+for a in ax.flat:
+    a.tick_params(axis='x', rotation=90)
+
+
+for i in python_group:
+    if number in i:
+        plt.savefig(f'pictures/codewars_results/python_{python_group}.svg')
+
+plt.tight_layout()
 plt.show()
 
 
