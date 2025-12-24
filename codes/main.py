@@ -11,7 +11,7 @@ def dict_to_csv(data, path):
 
 # users = []
 # Read data from csv file
-group ='python_0'
+group ='python_7'
 
 users = []
 

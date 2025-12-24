@@ -2,15 +2,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-python_group='0'
-number='0'
+python_group='7'
+# number='0'
 when='daily'
 daily=f"python_{python_group}_daily"
 weekly=f"python_{python_group}_weekly"
 monthly=f"python_{python_group}_monthly"
 total_ll=f'python_{python_group}_total_all'
 
-df=pd.read_csv(f'data/results/{total_ll}.csv')
+df=pd.read_csv(f'data/results/{monthly}.csv')
 
 fig, ax = plt.subplots(2,2,figsize=(20, 8))
 fig.suptitle('Python_Codewars_results')
@@ -29,7 +29,7 @@ for a in ax.flat:
 
 
 for i in python_group:
-    if number in i:
+    if i in python_group:
         plt.savefig(f'pictures/codewars_results/python_{python_group}.svg')
 
 plt.tight_layout()
