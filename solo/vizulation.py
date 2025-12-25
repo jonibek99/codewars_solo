@@ -6,10 +6,10 @@ daily='daily'
 weekly='weekly'
 monthly='monthly'
 total_all='total_all'
-python_group = '8'
+python_group = '1'
 
 
-when = total_all 
+when = total_all
 
 if when == 'daily':
     file_name = f"python_{python_group}_daily"
@@ -18,7 +18,7 @@ elif when == 'weekly':
 elif when == 'monthly':
     file_name = f"python_{python_group}_monthly"
 else:
-    file_name = f"python_{python_group}_daily"  
+    file_name = f"python_{python_group}_total_all"  
 
 df = pd.read_csv(f'data/results/{file_name}.csv')
 
@@ -64,6 +64,6 @@ plt.savefig(f'when/{when}/python_{python_group}.svg', bbox_inches='tight')
 plt.tight_layout()
 plt.show()
 
-print(f"Grafis_saved")
+print(f"Grafiks_saved")
 #print(f"1. pictures/codewars_results/python_{python_group}_{when}.svg")
 print(f"2. when/{when}/python_{python_group}.svg")
