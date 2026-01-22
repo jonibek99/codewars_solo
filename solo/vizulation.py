@@ -6,10 +6,10 @@ daily='daily'
 weekly='weekly'
 monthly='monthly'
 total_all='total_all'
-python_group = '1'
+python_group = '0'
 
 
-when = total_all
+when =total_all
 
 if when == 'daily':
     file_name = f"python_{python_group}_daily"
@@ -30,7 +30,7 @@ fig, ax = plt.subplots(2, 2, figsize=(40, 15))
 fig.suptitle(f'Python Codewars Results - {when.capitalize()}')
 
 
-sns.lineplot(data=df, ax=ax[0, 0], x='username', y='total_completed', color='red')
+sns.lineplot(data=df, ax=ax[0, 0], x='username', y='total_completed', color='red',size=10)
 ax[0, 0].grid(which='both')
 ax[0, 0].set_ylabel('katalas_capacity')
 ax[0, 0].set_xlabel('users')
