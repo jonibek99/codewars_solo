@@ -6,7 +6,7 @@ daily='daily'
 weekly='weekly'
 monthly='monthly'
 total_all='total_all'
-python_group = '0'
+python_group = '7'
 
 
 when =total_all
