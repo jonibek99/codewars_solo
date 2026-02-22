@@ -6,7 +6,7 @@ daily='daily'
 weekly='weekly'
 monthly='monthly'
 total_all='total_all'
-python_group = '7'
+python_group = '2'
 
 
 when =total_all
@@ -26,7 +26,7 @@ df = pd.read_csv(f'data/results/{file_name}.csv')
 #os.makedirs('pictures/codewars_results', exist_ok=True)
 os.makedirs(f'when/{when}', exist_ok=True)  
 
-fig, ax = plt.subplots(2, 2, figsize=(40, 15))
+fig, ax = plt.subplots(2, 2, figsize=(30, 15))
 fig.suptitle(f'Python Codewars Results - {when.capitalize()}')
 
 
@@ -67,3 +67,4 @@ plt.show()
 print(f"Grafiks_saved")
 #print(f"1. pictures/codewars_results/python_{python_group}_{when}.svg")
 print(f"2. when/{when}/python_{python_group}.svg")
+
